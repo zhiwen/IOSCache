@@ -10,6 +10,13 @@
 		1003059F1951ACED00E795A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1003059E1951ACED00E795A0 /* Foundation.framework */; };
 		100305A21951ACED00E795A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 100305A11951ACED00E795A0 /* main.m */; };
 		100305A61951ACED00E795A0 /* IOSCache.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 100305A51951ACED00E795A0 /* IOSCache.1 */; };
+		100305B41951C78700E795A0 /* FileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 100305B31951C78700E795A0 /* FileCache.m */; };
+		100305B71951C7CB00E795A0 /* NSKeyedArchiverExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 100305B61951C7CB00E795A0 /* NSKeyedArchiverExt.m */; };
+		100305BA1951CA5C00E795A0 /* CacheUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 100305B91951CA5C00E795A0 /* CacheUtil.m */; };
+		100305BD1951CC1900E795A0 /* FileCacheStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 100305BC1951CC1900E795A0 /* FileCacheStore.m */; };
+		100305C31951EBC400E795A0 /* NSKeyedUnarchiverExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 100305C21951EBC400E795A0 /* NSKeyedUnarchiverExt.m */; };
+		100305C61951ED6B00E795A0 /* CacheConstant.m in Sources */ = {isa = PBXBuildFile; fileRef = 100305C51951ED6B00E795A0 /* CacheConstant.m */; };
+		100305CA1951F3E000E795A0 /* PersonModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 100305C91951F3E000E795A0 /* PersonModule.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +38,20 @@
 		100305A11951ACED00E795A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		100305A41951ACED00E795A0 /* IOSCache-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOSCache-Prefix.pch"; sourceTree = "<group>"; };
 		100305A51951ACED00E795A0 /* IOSCache.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = IOSCache.1; sourceTree = "<group>"; };
+		100305B21951C78700E795A0 /* FileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCache.h; sourceTree = "<group>"; };
+		100305B31951C78700E795A0 /* FileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCache.m; sourceTree = "<group>"; };
+		100305B51951C7CB00E795A0 /* NSKeyedArchiverExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSKeyedArchiverExt.h; sourceTree = "<group>"; };
+		100305B61951C7CB00E795A0 /* NSKeyedArchiverExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSKeyedArchiverExt.m; sourceTree = "<group>"; };
+		100305B81951CA5C00E795A0 /* CacheUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheUtil.h; sourceTree = "<group>"; };
+		100305B91951CA5C00E795A0 /* CacheUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheUtil.m; sourceTree = "<group>"; };
+		100305BB1951CC1900E795A0 /* FileCacheStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileCacheStore.h; sourceTree = "<group>"; };
+		100305BC1951CC1900E795A0 /* FileCacheStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileCacheStore.m; sourceTree = "<group>"; };
+		100305C11951EBC400E795A0 /* NSKeyedUnarchiverExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSKeyedUnarchiverExt.h; sourceTree = "<group>"; };
+		100305C21951EBC400E795A0 /* NSKeyedUnarchiverExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSKeyedUnarchiverExt.m; sourceTree = "<group>"; };
+		100305C41951ED6B00E795A0 /* CacheConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheConstant.h; sourceTree = "<group>"; };
+		100305C51951ED6B00E795A0 /* CacheConstant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheConstant.m; sourceTree = "<group>"; };
+		100305C81951F3E000E795A0 /* PersonModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonModule.h; sourceTree = "<group>"; };
+		100305C91951F3E000E795A0 /* PersonModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonModule.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +94,9 @@
 		100305A01951ACED00E795A0 /* IOSCache */ = {
 			isa = PBXGroup;
 			children = (
+				100305C71951F3C000E795A0 /* module */,
+				100305AE1951C4D800E795A0 /* cache */,
+				100305AC1951C4BC00E795A0 /* store */,
 				100305A11951ACED00E795A0 /* main.m */,
 				100305A51951ACED00E795A0 /* IOSCache.1 */,
 				100305A31951ACED00E795A0 /* Supporting Files */,
@@ -86,6 +110,41 @@
 				100305A41951ACED00E795A0 /* IOSCache-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		100305AC1951C4BC00E795A0 /* store */ = {
+			isa = PBXGroup;
+			children = (
+				100305BB1951CC1900E795A0 /* FileCacheStore.h */,
+				100305BC1951CC1900E795A0 /* FileCacheStore.m */,
+			);
+			name = store;
+			sourceTree = "<group>";
+		};
+		100305AE1951C4D800E795A0 /* cache */ = {
+			isa = PBXGroup;
+			children = (
+				100305B21951C78700E795A0 /* FileCache.h */,
+				100305B31951C78700E795A0 /* FileCache.m */,
+				100305B51951C7CB00E795A0 /* NSKeyedArchiverExt.h */,
+				100305B61951C7CB00E795A0 /* NSKeyedArchiverExt.m */,
+				100305B81951CA5C00E795A0 /* CacheUtil.h */,
+				100305B91951CA5C00E795A0 /* CacheUtil.m */,
+				100305C11951EBC400E795A0 /* NSKeyedUnarchiverExt.h */,
+				100305C21951EBC400E795A0 /* NSKeyedUnarchiverExt.m */,
+				100305C41951ED6B00E795A0 /* CacheConstant.h */,
+				100305C51951ED6B00E795A0 /* CacheConstant.m */,
+			);
+			name = cache;
+			sourceTree = "<group>";
+		};
+		100305C71951F3C000E795A0 /* module */ = {
+			isa = PBXGroup;
+			children = (
+				100305C81951F3E000E795A0 /* PersonModule.h */,
+				100305C91951F3E000E795A0 /* PersonModule.m */,
+			);
+			name = module;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +198,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				100305C61951ED6B00E795A0 /* CacheConstant.m in Sources */,
+				100305BA1951CA5C00E795A0 /* CacheUtil.m in Sources */,
+				100305BD1951CC1900E795A0 /* FileCacheStore.m in Sources */,
+				100305C31951EBC400E795A0 /* NSKeyedUnarchiverExt.m in Sources */,
+				100305B41951C78700E795A0 /* FileCache.m in Sources */,
+				100305B71951C7CB00E795A0 /* NSKeyedArchiverExt.m in Sources */,
+				100305CA1951F3E000E795A0 /* PersonModule.m in Sources */,
 				100305A21951ACED00E795A0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
