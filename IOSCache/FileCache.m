@@ -12,9 +12,7 @@
 #import "NSKeyedArchiverExt.h"
 #import "NSKeyedUnarchiverExt.h"
 
-@implementation FileCache {
-
-}
+@implementation FileCache
 
 -(FileCacheStore *) getFileCacheStore {
     FileCacheStore *fileCacheStore = [FileCacheStore sharedFileCacheStore];
@@ -35,6 +33,7 @@
 
     NSMutableData *data = [[NSMutableData alloc] init];
     NSKeyedArchiverExt *keyedArchiver = [[NSKeyedArchiverExt alloc] initForWritingWithMutableData:data];
+    [keyedArchiver setOutputFormat:NSPropertyListXMLFormat_v1_0];
     [keyedArchiver encodeObject:value];
     [keyedArchiver encodeObjectExpireTime:expireSecTime];
     [keyedArchiver finishEncoding];
@@ -51,7 +50,8 @@
     if (!data) {
         return nil;
     }
-    NSKeyedUnarchiverExt *keyedUnarchiver = [NSKeyedUnarchiverExt unarchiveObjectWithData:data];
+
+    NSKeyedUnarchiverExt *keyedUnarchiver = [[NSKeyedUnarchiverExt alloc] initForReadingWithData:data];
     id result = [keyedUnarchiver decodeObject];
     
     //data-expire-validate
@@ -72,13 +72,20 @@
 }
 
 -(BOOL) removeObjectForMD5Key:(NSString *)md5key {
-    
-    return YES;
+    return [[self getFileCacheStore] removeForFileName:md5key];
 }
 
 -(BOOL) removeObjectForKey : (NSString *) key {
     NSString *md5Key = [CacheUtil md5String:key];
     return [self removeObjectForMD5Key:md5Key];
+}
+
+-(BOOL) removeForGroup : (NSString *) group {
+    return [[self getFileCacheStore] removeForGroup:group];
+}
+
+-(BOOL) removeAll {
+    return [[self getFileCacheStore] removeAll];
 }
 
 @end

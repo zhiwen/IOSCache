@@ -19,4 +19,9 @@
 
 -(id) readForFileName : (NSString *) fileName;
 
+-(BOOL) removeForFileName : (NSString *) fileName;
+
+-(BOOL) removeForGroup : (NSString *) group;
+
+-(BOOL) removeAll;
 @end

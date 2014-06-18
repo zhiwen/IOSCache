@@ -20,4 +20,8 @@
 
 -(BOOL) removeObjectForKey : (NSString *) key;
 
+-(BOOL) removeForGroup : (NSString *) group;
+
+-(BOOL) removeAll;
+
 @end

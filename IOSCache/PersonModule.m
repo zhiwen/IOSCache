@@ -13,7 +13,7 @@
 -(void) encodeWithCoder:(NSCoder *)aCoder {
     [aCoder encodeObject:_name forKey:@"name"];
     [aCoder encodeInt32:_age forKey:@"age"];
-//    [aCoder encodeObject:_address forKey:@"address"];
+    [aCoder encodeObject:_address forKey:@"address"];
     [aCoder encodeFloat:_weight forKey:@"weight"];
 }
 
@@ -21,7 +21,7 @@
     if (self = [super init]) {
         self.name = [aDecoder decodeObjectForKey:@"name"];
         self.age = [aDecoder decodeInt32ForKey:@"age"];
-//        self.address = [aDecoder decodeObjectForKey:@"address"];
+        self.address = [aDecoder decodeObjectForKey:@"address"];
         self.weight = [aDecoder decodeFloatForKey:@"weight"];
     }
     return self;

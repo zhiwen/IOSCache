@@ -72,17 +72,17 @@
     //current time
     time_t currentTime;
     time(&currentTime);
-    
+    NSLog(@"currT:%ld expireT:%lld", currentTime, expireTime);
     return expireTime > currentTime;
 }
 
 -(BOOL) dataSignValidate {
     
     NSString *currentObjSign = [CacheUtil buildSign:_decodeNames];
-    NSString *targetSign = [self getTargetObjectSign];
-    
-    NSLog(@"target-sign %@  currentObjSign %@ ", targetSign, currentObjSign);
-    return [currentObjSign isEqualToString:targetSign];
+    NSString *serializedSign = [self getTargetObjectSign];
+
+    NSLog(@"target-sign %@  currentObjSign %@", serializedSign, currentObjSign);
+    return [currentObjSign isEqualToString:serializedSign];
 }
 
 -(NSString *) getTargetObjectSign {

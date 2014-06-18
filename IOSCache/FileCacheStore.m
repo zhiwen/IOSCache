@@ -34,7 +34,7 @@
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
 
-    NSString *directory = [NSString stringWithFormat:@"%@/%@", _storePath, _group];
+    NSString *directory = [NSString stringWithFormat:@"%@/%@/", _storePath, _group];
     if (![self directoryExists:directory]) {
         BOOL created = [fileManager createDirectoryAtPath:directory withIntermediateDirectories:YES attributes:nil error:nil];
         if (!created) {
@@ -57,7 +57,7 @@
 -(instancetype) initInstance {
     if (self = [super init]) {
         fileAccessLock = [[NSRecursiveLock alloc] init];
-        _storePath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingString:@"/data-caches"];
+        _storePath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingString:@"/data-caches/"];
         _group = DEFAULT_GROUP_VALUE;
         //load file calc size and count
     }
@@ -94,6 +94,44 @@
     NSString *filePath = [self filePathConcat:fileName];
     NSMutableData *data = [NSMutableData dataWithContentsOfFile:filePath];
     return data;
+}
+
+-(BOOL) removeForFileName : (NSString *) fileName {
+    if (!fileName) {
+        return NO;
+    }
+    NSString *filePath = [self filePathConcat:fileName];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    @try {
+        [fileAccessLock lock];
+        return [fileManager removeItemAtPath:filePath error:nil];
+    }
+    @finally {
+        [fileAccessLock unlock];
+    }
+}
+
+-(BOOL) removeForGroup : (NSString *) group {
+    NSString *groupDir = [self createDirectoryIfNULL];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    @try {
+        [fileAccessLock lock];
+        return [fileManager removeItemAtPath:groupDir error:nil];
+    }
+    @finally {
+        [fileAccessLock unlock];
+    }
+}
+
+-(BOOL) removeAll {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    @try {
+        [fileAccessLock lock];
+        return [fileManager removeItemAtPath:_storePath error:nil];
+    }
+    @finally {
+        [fileAccessLock unlock];
+    }
 }
 
 @end
