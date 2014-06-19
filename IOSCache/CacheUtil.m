@@ -19,8 +19,8 @@
 +(NSString *) buildSign:(NSArray *)array {
     array = [array sortedArrayUsingSelector:@selector(compare:)];
     NSString *sourceData = [NSString stringWithFormat:@"%@", array];
-//    return [NSString stringWithFormat:@"%ld", [sourceData hash]];
-    return sourceData;
+    return [NSString stringWithFormat:@"%ld", [sourceData hash]];
+//    return sourceData;
 }
 
 +(time_t) calcExpireSecTime : (int) expireSecTime {

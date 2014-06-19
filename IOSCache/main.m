@@ -21,7 +21,7 @@ int main(int argc, const char * argv[])
         //fc.group = @"p";
         
         PersonModule *person1 = [[PersonModule alloc] init];
-        person1.name = @"zhiwen";
+        person1.name = @"yyyyy";
         person1.age = 12;
         person1.address = [[NSMutableArray alloc] initWithObjects:@"hn", nil];
         person1.weight = 15.6;

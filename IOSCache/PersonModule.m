@@ -20,9 +20,9 @@
 -(id) initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
         self.name = [aDecoder decodeObjectForKey:@"name"];
-        self.age = [aDecoder decodeInt32ForKey:@"age"];
-        self.address = [aDecoder decodeObjectForKey:@"address"];
-        self.weight = [aDecoder decodeFloatForKey:@"weight"];
+        //self.age = [aDecoder decodeInt32ForKey:@"age"];
+        //self.address = [aDecoder decodeObjectForKey:@"address"];
+        //self.weight = [aDecoder decodeFloatForKey:@"weight"];
     }
     return self;
 }
