@@ -35,8 +35,12 @@
 }
 
 - (id)decodeObjectForKey:(NSString *)key {
+    id obj = [super decodeObjectForKey:key];
+    if (!obj) {
+        return obj;
+    }
     [_decodeNames addObject:key];
-    return [super decodeObjectForKey:key];
+    return obj;
 }
 - (BOOL)decodeBoolForKey:(NSString *)key {
     [_decodeNames addObject:key];
@@ -77,7 +81,6 @@
 }
 
 -(BOOL) dataSignValidate {
-    
     NSString *currentObjSign = [CacheUtil buildSign:_decodeNames];
     NSString *serializedSign = [self getTargetObjectSign];
 

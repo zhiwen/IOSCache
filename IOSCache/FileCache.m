@@ -33,7 +33,7 @@
 
     NSMutableData *data = [[NSMutableData alloc] init];
     NSKeyedArchiverExt *keyedArchiver = [[NSKeyedArchiverExt alloc] initForWritingWithMutableData:data];
-    [keyedArchiver setOutputFormat:NSPropertyListXMLFormat_v1_0];
+//    [keyedArchiver setOutputFormat:NSPropertyListXMLFormat_v1_0];
     [keyedArchiver encodeObject:value];
     [keyedArchiver encodeObjectExpireTime:expireSecTime];
     [keyedArchiver finishEncoding];
