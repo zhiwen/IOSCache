@@ -10,7 +10,7 @@
 
 @interface NSKeyedUnarchiverExt : NSKeyedUnarchiver
 
--(BOOL) dataExpireValidate;
--(BOOL) dataSignValidate;
+- (BOOL)dataExpireValidate;
+- (BOOL)dataSignValidate;
 
 @end

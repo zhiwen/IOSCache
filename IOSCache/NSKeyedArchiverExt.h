@@ -10,8 +10,8 @@
 
 @interface NSKeyedArchiverExt : NSKeyedArchiver
 
--(NSArray *) getAllEncodeNames;
+- (NSArray *)getAllEncodeNames;
 
--(void) encodeObjectExpireTime : (int) expireSecTime;
+- (void)encodeObjectExpireTime:(int)expireSecTime;
 
 @end

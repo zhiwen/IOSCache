@@ -10,18 +10,19 @@
 
 @interface FileCache : NSObject
 
-@property (nonatomic) NSString *storePath;
-@property (nonatomic) NSString *group;
+@property(nonatomic) NSString *storePath;
+@property(nonatomic) NSString *group;
 
+- (BOOL)putObject:(id<NSCoding>)value
+    expireSecTime:(int)expireSecTime
+           forKey:(NSString *)key;
 
--(BOOL) putObject : (id<NSCoding>) value expireSecTime : (int) expireSecTime forKey : (NSString *) key;
+- (id)getObjectForKey:(NSString *)key;
 
--(id) getObjectForKey : (NSString *) key;
+- (BOOL)removeObjectForKey:(NSString *)key;
 
--(BOOL) removeObjectForKey : (NSString *) key;
+- (BOOL)removeForGroup:(NSString *)group;
 
--(BOOL) removeForGroup : (NSString *) group;
-
--(BOOL) removeAll;
+- (BOOL)removeAll;
 
 @end

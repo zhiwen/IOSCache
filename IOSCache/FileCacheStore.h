@@ -10,18 +10,18 @@
 
 @interface FileCacheStore : NSObject
 
-+(instancetype) sharedFileCacheStore;
++ (instancetype)sharedFileCacheStore;
 
-@property (nonatomic) NSString *storePath;
-@property (nonatomic) NSString *group;
+@property(nonatomic) NSString *storePath;
+@property(nonatomic) NSString *group;
 
--(BOOL) storeForFileName : (NSString *) fileName data : (NSMutableData *) data;
+- (BOOL)storeForFileName:(NSString *)fileName data:(NSMutableData *)data;
 
--(id) readForFileName : (NSString *) fileName;
+- (id)readForFileName:(NSString *)fileName;
 
--(BOOL) removeForFileName : (NSString *) fileName;
+- (BOOL)removeForFileName:(NSString *)fileName;
 
--(BOOL) removeForGroup : (NSString *) group;
+- (BOOL)removeForGroup:(NSString *)group;
 
--(BOOL) removeAll;
+- (BOOL)removeAll;
 @end

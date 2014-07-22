@@ -10,77 +10,95 @@
 #import "CacheConstant.h"
 #import "CacheUtil.h"
 
-@implementation NSKeyedUnarchiverExt {
-@private
+@implementation NSKeyedUnarchiverExt
+{
+  @private
     NSMutableArray *_decodeNames;
 }
 
--(id) init {
-    if (self = [super init]) {
+- (id)init
+{
+    if (self = [super init])
+    {
         [self initData];
     }
     return self;
 }
 
--(id) initForReadingWithData:(NSData *)data {
+- (id)initForReadingWithData:(NSData *)data
+{
     self = [super initForReadingWithData:data];
-    if (self) {
+    if (self)
+    {
         [self initData];
     }
     return self;
 }
 
--(void) initData {
-    _decodeNames  = [[NSMutableArray alloc] init];
+- (void)initData
+{
+    _decodeNames = [[NSMutableArray alloc] init];
 }
 
-- (id)decodeObjectForKey:(NSString *)key {
+- (id)decodeObjectForKey:(NSString *)key
+{
     id obj = [super decodeObjectForKey:key];
-    if (!obj) {
+    if (!obj)
+    {
         return obj;
     }
     [_decodeNames addObject:key];
     return obj;
 }
-- (BOOL)decodeBoolForKey:(NSString *)key {
+- (BOOL)decodeBoolForKey:(NSString *)key
+{
     [_decodeNames addObject:key];
     return [super decodeBoolForKey:key];
 }
-- (int)decodeIntForKey:(NSString *)key {
+- (int)decodeIntForKey:(NSString *)key
+{
     [_decodeNames addObject:key];
     return [super decodeIntForKey:key];
 }
-- (int32_t)decodeInt32ForKey:(NSString *)key {
+- (int32_t)decodeInt32ForKey:(NSString *)key
+{
     [_decodeNames addObject:key];
     return [super decodeInt32ForKey:key];
 }
-- (int64_t)decodeInt64ForKey:(NSString *)key {
+- (int64_t)decodeInt64ForKey:(NSString *)key
+{
     [_decodeNames addObject:key];
     return [super decodeInt64ForKey:key];
 }
-- (float)decodeFloatForKey:(NSString *)key {
+- (float)decodeFloatForKey:(NSString *)key
+{
     [_decodeNames addObject:key];
     return [super decodeFloatForKey:key];
 }
-- (double)decodeDoubleForKey:(NSString *)key {
+- (double)decodeDoubleForKey:(NSString *)key
+{
     [_decodeNames addObject:key];
     return [super decodeDoubleForKey:key];
 }
-- (const uint8_t *)decodeBytesForKey:(NSString *)key returnedLength:(NSUInteger *)lengthp NS_RETURNS_INNER_POINTER {
+- (const uint8_t *)decodeBytesForKey:(NSString *)key
+                      returnedLength:(NSUInteger *)lengthp NS_RETURNS_INNER_POINTER
+{
     [_decodeNames addObject:key];
     return [super decodeBytesForKey:key returnedLength:lengthp];
 }
 
--(BOOL) dataExpireValidate {
+- (BOOL)dataExpireValidate
+{
     int64_t expireTime = [super decodeInt64ForKey:LW_OBJ_CACHE_EXPIRE_NAME];
-    //current time
+    // current time
     time_t currentTime;
     time(&currentTime);
     NSLog(@"currT:%ld expireT:%lld", currentTime, expireTime);
     return expireTime > currentTime;
 }
 
--(BOOL) dataSignValidate {
+- (BOOL)dataSignValidate
+{
     NSString *currentObjSign = [CacheUtil buildSign:_decodeNames];
     NSString *serializedSign = [self getTargetObjectSign];
 
@@ -88,9 +106,9 @@
     return [currentObjSign isEqualToString:serializedSign];
 }
 
--(NSString *) getTargetObjectSign {
+- (NSString *)getTargetObjectSign
+{
     return [super decodeObjectForKey:LW_OBJ_SER_SIGN];
 }
-
 
 @end

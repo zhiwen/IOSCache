@@ -10,10 +10,10 @@
 
 @interface CacheUtil : NSObject
 
-+(NSString *) md5String : (id) object;
++ (NSString *)md5String:(id)object;
 
-+(NSString *) buildSign : (NSArray *) array;
++ (NSString *)buildSign:(NSArray *)array;
 
-+(time_t) calcExpireSecTime : (int) expireSecTime;
++ (time_t)calcExpireSecTime:(int)expireSecTime;
 
 @end
